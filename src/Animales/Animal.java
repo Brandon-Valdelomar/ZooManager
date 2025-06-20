@@ -37,7 +37,7 @@ public class Animal {
     }
 
     public Animal(String id, String nombre, String especie, LocalDate FechaNacimiento, Zonas ZonaUbicacion) {
-        if (id.matches("^[\\w]-[0-9]{4}$"))
+        if (id.matches("^[\\w]-[0-9]{4}$")){
         this.id = id;
         this.nombre = nombre;
         this.especie = especie;
@@ -48,13 +48,10 @@ public class Animal {
 
     
     }
+}     
 
-   
-
-    
-    
-        
-
-   
-        
+    @Override
+    public String toString() {
+        return "Animal{" + "id=" + id + ", nombre=" + nombre + ", especie=" + especie + ", FechaNacimiento=" + FechaNacimiento + ", ZonaUbicacion=" + ZonaUbicacion + '}';
+    }
 }
