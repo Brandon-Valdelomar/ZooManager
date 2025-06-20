@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Animales;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 /**
  *
  * @author Brandon Valdelomar
@@ -12,13 +12,12 @@ public class Animal {
     private String id;
     private String nombre;
     private String especie;
-    private LocalDateTime FechaNacimiento;
-    private String ZonaUbicacion;
+    private LocalDate FechaNacimiento;
+    private Zonas ZonaUbicacion;
 
     public String getId() {
         return id;
     }
-
 
     public String getNombre() {
         return nombre;
@@ -28,33 +27,34 @@ public class Animal {
         return especie;
     }
 
-    public LocalDateTime getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return FechaNacimiento;
     }
 
-    public String getZonaUbicacion() {
-        return ZonaUbicacion;
+
+    public void setZonaUbicacion(Zonas ZonaUbicacion) {
+        this.ZonaUbicacion = ZonaUbicacion;
     }
 
-    public void setFechaNacimiento(LocalDateTime FechaNacimiento) {
-        this.FechaNacimiento = LocalDateTime.now();
+    public Animal(String id, String nombre, String especie, LocalDate FechaNacimiento, Zonas ZonaUbicacion) {
+        if (id.matches("^[\\w]-[0-9]{4}$"))
+        this.id = id;
+        this.nombre = nombre;
+        this.especie = especie;
+        if (!FechaNacimiento.isAfter(LocalDate.now())){
+            this.FechaNacimiento = FechaNacimiento;
+        this.ZonaUbicacion = Zonas.CONSERVACION;
     }
 
-        public Animal(String id, String nombre, String especie, String ZonaUbicacion) {
-            this.id = id;
-            this.nombre = nombre;
-            this.especie = especie;
-            this.FechaNacimiento = LocalDateTime.now();
-            this.ZonaUbicacion = ZonaUbicacion;
-        }
-
-    @Override
-    public String toString() {
-        return "Animal{" + "id=" + id + ", nombre=" + nombre + ", especie=" + especie + ", FechaNacimiento=" + FechaNacimiento + ", ZonaUbicacion=" + ZonaUbicacion + '}';
+    
     }
+
+   
+
+    
+    
         
-    }
-    
-    
-    
 
+   
+        
+}
