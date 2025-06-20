@@ -1,0 +1,67 @@
+# Creado por https://www.toptal.com/developers/gitignore/api/windows,java,netbeans
+# Editar en https://www.toptal.com/developers/gitignore?templates=windows,java,netbeans
+
+### Java ###
+# Archivo de clase compilado
+*.clase
+
+# Archivo de registro
+*.registro
+
+# Archivos BlueJ
+*.ctxt
+
+# Herramientas móviles para Java (J2ME)
+.mtj.tmp/
+
+# Archivos del paquete #
+*.frasco
+*.guerra
+*.nar
+*.oreja
+*.cremallera
+*.tar.gz
+*.rar
+
+# registros de fallos de la máquina virtual, consulte http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+pid de reproducción*
+
+### NetBeans ###
+**/nbproject/privado/
+**/nbproject/Makefile-*.mk
+**/nbproject/Paquete-*.bash
+construir/
+nbbuild/
+dist/
+nbdist/
+build/
+.nb-gradle/
+
+### Ventanas ###
+# Archivos de caché de miniaturas de Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Archivo de volcado
+*.stackdump
+
+# Archivo de configuración de carpeta
+[Dd]esktop.ini
+
+# Papelera de reciclaje utilizada en recursos compartidos de archivos
+$RECYCLE.BIN/
+
+# Archivos del instalador de Windows
+*.taxi
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Atajos de Windows
+*.lnk
+
+# Fin de https://www.toptal.com/developers/gitignore/api/windows,java,netbeans
