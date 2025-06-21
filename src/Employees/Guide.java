@@ -16,12 +16,14 @@ public class Guide extends Employees {
     private Object IdiomaNuevo;
     private Vector<String> RegistroRecorrido;
 
-    public Guide(Vector<String> Idiomas, Object IdiomaNuevo, Vector<String> RegistroRecorrido, int id, String nombre, String numero, String cedula, LocalDate FechaNacimiento, int Salario) {
-        super(id, nombre, numero, cedula, FechaNacimiento, Salario);
+    public Guide(Vector<String> Idiomas, Object IdiomaNuevo, Vector<String> RegistroRecorrido, int Salario, int cedula, String numero, String nombre, String fechaNacimiento) {
+        super(Salario, cedula, numero, nombre, fechaNacimiento);
         this.Idiomas = Idiomas;
         this.IdiomaNuevo = IdiomaNuevo;
         this.RegistroRecorrido = RegistroRecorrido;
     }
+
+   
 
     public Vector<String> getIdiomas() {
         return Idiomas;

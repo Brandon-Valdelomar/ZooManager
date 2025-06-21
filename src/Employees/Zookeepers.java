@@ -14,12 +14,16 @@ import java.util.Vector;
 public class Zookeepers extends Employees {
     private String Especialidad;
     private Vector<String> Actividades;
+
+    public Zookeepers(String Especialidad, Vector<String> Actividades, int Salario, int cedula, String numero, String nombre, String fechaNacimiento) {
+        super(Salario, cedula, numero, nombre, fechaNacimiento);
+        this.Especialidad = Especialidad;
+        this.Actividades = Actividades;
+    }
     
     
 
-    public Zookeepers(int id, String nombre, String numero, String cedula, LocalDate FechaNacimiento, int Salario) {
-        super(id, nombre, numero, cedula, FechaNacimiento, Salario);
-    }
+   
     
     public void AlimentarAnimal(String NombreAnimal){
         if(NombreAnimal == null || NombreAnimal.isBlank()){
