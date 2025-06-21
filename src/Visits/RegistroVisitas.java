@@ -23,7 +23,20 @@ public class RegistroVisitas {
         String Visita = ("Realizo una Visita :" + nombreVisitante + "En la fecha: " + fechaVisita);
                 Visitas.add(Visita);
             }
+
+    public String getNombreVisitante() {
+        return nombreVisitante;
+    }
+
+    public LocalDate getFechaVisita() {
+        return fechaVisita;
+    }
+
+    @Override
+    public String toString() {
+        return "RegistroVisitas{" + "nombreVisitante=" + nombreVisitante + ", fechaVisita=" + fechaVisita + ", Visitas=" + Visitas + '}';
+    }
+
    
-   
-   
-}
+    
+    }
