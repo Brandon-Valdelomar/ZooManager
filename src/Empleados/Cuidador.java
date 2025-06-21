@@ -34,12 +34,26 @@ public class Cuidador extends Empleado {
         if(NombreAnimal == null || NombreAnimal.isBlank()){
             throw new IllegalArgumentException("El nombre de el animal no puede estar vacio");
     }
-        String actividad = ("Alimento al Animal: " + NombreAnimal); 
+        String actividad = ("Se alimento a : " + NombreAnimal); 
             Actividades.add(actividad);
 }
 
+    public void VerificarEstado (String NombreAnimal) {
+        if(NombreAnimal == null || NombreAnimal.isBlank()){
+            throw new IllegalArgumentException("El nombre de el animal no puede estar vacio");
+        }
+        String actividad = ("Se verifico el estado de salud de: " + NombreAnimal);
+        Actividades.add(actividad);
+    }
+    
+    
+    
     public Vector<String> getActividades() {
         return Actividades;
     }
+
+    
+    
+    
     
 }

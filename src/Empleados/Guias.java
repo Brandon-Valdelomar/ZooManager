@@ -13,6 +13,7 @@ import java.time.LocalDate;
 public class Guias extends Empleado{
     private Vector<String> Idiomas;
     private Object IdiomaNuevo;
+    private Vector<String> RegistroRecorrido;
 
     
     public String[] getIdiomas() {
@@ -43,4 +44,16 @@ public class Guias extends Empleado{
                 Idiomas.add(IdiomaNuevo);
     }
        
+     public void Recorridos(String NombreZona) {
+        if(NombreZona == null || NombreZona.isBlank()){
+            throw new IllegalArgumentException("El nombre de la zona no puede estar vacia");
+            
+        }
+        String actividad = ("Se realizo el recorrido en la zona de: " + NombreZona);
+        if (!RegistroRecorrido.contains(NombreZona))
+            RegistroRecorrido.add(NombreZona);
+            
+            
+    }
+    
 } 
