@@ -4,11 +4,9 @@
  */
 package Empleados;
 import java.time.LocalDate;
-/**
- *
- * @author Brandon Valdelomar
- */
-public abstract class Cuidadores {
+import java.time.Period;
+
+public abstract class Empleado {
     protected int id;
     protected String cedula;
     protected String name;
@@ -37,19 +35,35 @@ public abstract class Cuidadores {
     }
 
     public void setNumero(String Numero) {
-        this.Numero = Numero;
+        if(!Numero.matches("^//d{2}-//d{2}-//d{2}-//{2}")){
+            throw new IllegalArgumentException("El Numero No es Valido");
+        }
+        else
+            this.Numero = Numero;
     }
 
     public void setSalario(int Salario) {
-        this.Salario = Salario;
+        if (Salario >= 300000){
+            throw new IllegalArgumentException("Salario Bajo");
+        }
+        else
+            this.Salario = Salario;
     }
-
-    public Cuidadores(int id, String cedula, String name, String Numero) {
+    
+    
+    
+    public Empleado(int id, String cedula, String name, String Numero,LocalDate FechaNacimiento){
+        LocalDate hoy = LocalDate.now();
         this.id = id;
         this.cedula = cedula;
         this.name = name;
-        if(!FechaNacimiento.isAfter(LocalDate.now())){
-            this.FechaNacimiento = FechaNacimiento;
+        if(FechaNacimiento.isAfter(hoy)){
+            throw new IllegalArgumentException("No puede ser una fecha futura");
+        }
+        
+        int edad = Period.between(FechaNacimiento, hoy).getYears();
+        if (edad < 18){
+            throw new IllegalArgumentException("La edad minima es de 18 años");
         }
         this.Numero = Numero;
         this.Salario = 0;

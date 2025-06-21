@@ -4,12 +4,42 @@
  */
 package Empleados;
 
+import java.time.LocalDate;
+import java.util.Vector;
 /**
  *
  * @author Brandon Valdelomar
  */
-public class Cuidador {
+public class Cuidador extends Empleado {
+    private String Especialidad;
+    private Vector<String> Actividades;
+
     
+    public Cuidador(String Especialidad, Vector<String> Actividades, int id, String cedula, String name, String Numero, LocalDate FechaNacimiento) {
+        super(id, cedula, name, Numero, FechaNacimiento);
+        this.Especialidad = Especialidad;
+        this.Actividades = Actividades;
+    }
+
+   
+    public String getEspecialidad() {
+        return Especialidad;
+    }
+
+    public void setEspecialidad(String Especialidad) {
+        this.Especialidad = Especialidad;
+    }
     
+    public void AlimentarAnimal(String NombreAnimal){
+        if(NombreAnimal == null || NombreAnimal.isBlank()){
+            throw new IllegalArgumentException("El nombre de el animal no puede estar vacio");
+    }
+        String actividad = ("Alimento al Animal: " + NombreAnimal); 
+            Actividades.add(actividad);
+}
+
+    public Vector<String> getActividades() {
+        return Actividades;
+    }
     
 }
