@@ -22,8 +22,6 @@ public class Zookeepers extends Employees {
     }
     
     
-
-   
     
     public void AlimentarAnimal(String NombreAnimal){
         if(NombreAnimal == null || NombreAnimal.isBlank()){
@@ -37,7 +35,7 @@ public class Zookeepers extends Employees {
         if(NombreAnimal == null || NombreAnimal.isBlank()){
             throw new IllegalArgumentException("El nombre de el animal no puede estar vacio");
         }
-        String actividad = ("Se verifico el estado de salud de: " + NombreAnimal);
+        String actividad = ("Se verifico el estado de salud de el siguiente animal: " + NombreAnimal);
         Actividades.add(actividad);
     }
 
